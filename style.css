@@ -1,0 +1,63 @@
+#nodie {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.node {
+    color: #fff;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    position: absolute;
+}
+.node-item {
+    width: 100%;
+    height: 100%;
+    background-color: #4444ff;
+    transition: .5s transform;
+    border-radius: 50%;
+}
+.node.selected .node-item {
+    background: #333363;
+}
+.node-action {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #333363;
+    border-radius: 50%;
+    transition: .5s all;
+    z-index: -1;
+}
+
+/* Styling for the menu toggle */
+.node.show-menu .node-item {
+    background-color: #4884ff;
+    transform: scale(0.7);
+}
+.node.show-menu .node-item::after {
+    content: '\00d7';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+.node-action {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Individual positioning for actions  */
+.node.show-menu .incoming {
+    top: -20%;
+    left: -70%;
+}
+.node.show-menu .delete {
+    top: -80%;
+    left: 50%;
+}
+.node.show-menu .outgoing {
+    top: -20%;
+    left: 170%;
+}
